@@ -1,0 +1,22 @@
+{
+    "name": "matea/app-salon_php_mvc_js_sass-limpio",
+    "description": "App-Salon MVC",
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "./",
+            "Controllers\\": "./controllers",
+            "Model\\": "./models",
+            "Classes\\": "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "Timoteo Wierna",
+            "email": "timoteowierna302@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
