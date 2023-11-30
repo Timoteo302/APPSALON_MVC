@@ -66,7 +66,6 @@ class LoginController{
     }
 
     public static function logout(Router $router){
-        
         $_SESSION = [];
         header('Location: /');
     }

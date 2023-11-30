@@ -70,11 +70,11 @@ class Usuario extends ActiveRecord{
         }
 
         if(!$this->password){
-            self::$alertas['error'][] = "El password es obligatorio";
+            self::$alertas['error'][] = "La contraseña es obligatorio";
         }
 
         if(strlen($this->password) < 6){
-            self::$alertas['error'][] = "El password debe contener al menos 6 caracteres";
+            self::$alertas['error'][] = "La contraseña debe contener al menos 6 caracteres";
         }
 
         if(!$this->telefono){
@@ -91,7 +91,7 @@ class Usuario extends ActiveRecord{
         }
 
         if(!$this->password){
-            self::$alertas['error'][] = "El Password es Obligatorio o Incorrecto";
+            self::$alertas['error'][] = "La Contraseña es Obligatorio o Incorrecto";
         }
 
         return self::$alertas;
@@ -107,10 +107,10 @@ class Usuario extends ActiveRecord{
 
     public function validarPassword(){
         if(!$this->password){
-            self::$alertas['error'][] = "El Password es Obligatorio";
+            self::$alertas['error'][] = "La contraseña es Obligatorio";
         }
         if(strlen($this->password) < 6){
-            self::$alertas['error'][] = "El Password debe tener al menos 6 caracteres";
+            self::$alertas['error'][] = "La contraseña debe tener al menos 6 caracteres";
         }
         return self::$alertas;
     }
@@ -152,12 +152,10 @@ class Usuario extends ActiveRecord{
 
     public function comprobarPasswordAndVerificado($password){
         // debuguear($this);
-
         $resultado = password_verify($password, $this->password);
-        // debuguear($resultado);
         
         if(!$resultado || !$this->confirmado) {
-            self::$alertas['error'][] = 'Password Incorrectro o tu cuenta no ha sido confirmada';
+            self::$alertas['error'][] = 'Contraseña Incorrecta o tu cuenta no ha sido confirmada';
         } else{
             return true;
         }
